@@ -13,7 +13,7 @@ class FunctionsTest extends TestCase
     
     public function testBrokerInit()
     {
-        $this->assertIsResource($this->broker);
+        $this->assertInstanceOf('EnchantBroker', $this->broker);
     }
 
     public function testDictionarySuggest()

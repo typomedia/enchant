@@ -42,7 +42,8 @@ class EnchantTest extends TestCase
         $this->enchant->removeWord('test.pwl', 'phonetic');
         $suggestions = $this->enchant->getSuggestionsFromPwl('test.pwl', 'fonetic');
 
-        $this->assertEquals(null, $suggestions);
+        // since PHP 8.0 getSuggestionsFromPwl returns an empty array instead of null
+        $this->assertContains($suggestions, [null, []]);
     }
 
     public function testRemovePwl()
