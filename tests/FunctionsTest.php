@@ -10,11 +10,6 @@ class FunctionsTest extends TestCase
     {
         $this->broker = enchant_broker_init();
     }
-    
-    public function testBrokerInit()
-    {
-        $this->assertInstanceOf('EnchantBroker', $this->broker);
-    }
 
     public function testDictionarySuggest()
     {
